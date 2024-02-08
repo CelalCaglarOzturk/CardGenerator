@@ -2,11 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { initFlowbite } from 'flowbite'
 
 function App() {
-  initFlowbite()
-
   function mainProcess(){
     //VARIABLES
 let cardName: string = 'Man o War'// prompt('Name')
@@ -90,7 +87,6 @@ console.log(CardInfo.length+' variables stored')
 
 localStorage.setItem('name','mülayim')
 
-
 /*
 const promise = new Promise((resolve,reject)=> {
     setTimeout(()=>{
@@ -112,11 +108,7 @@ console.log(promise)
 */
 
 
-
-
-
-const API_URL = 'https://jsonplaceholder.typicode.com/posts'
-/*fetch(API_URL, {
+fetch(API_URL, {
 method: 'GET',
 //body:
 
@@ -124,16 +116,9 @@ method: 'GET',
 .then(res => res.json())
 .then(data =>console.log (data))
 .catch(err=> console.error(err))
-*/
-async function getPosts(){
-    try{    const res = await fetch(API_URL)
-        const data = await res.json()
-    console.log(data)
-}catch(err){
-    console.error(err)
-}
-}
-getPosts()
+
+
+//getPosts()
 }
 
 
@@ -150,7 +135,7 @@ getPosts()
    </button>
 </div>
 
-<div id="drawer-navigation" className="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+<div id="drawer-navigation" className="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800"  aria-labelledby="drawer-navigation-label">
     <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
     <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
       <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
