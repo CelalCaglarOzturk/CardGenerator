@@ -1,38 +1,17 @@
-import React, { useState, useEffect } from 'react';
 import sharp from 'sharp';
 
-const ImageResizer = ({ imagePath, newWidth, newHeight }) => {
-  const [resizedImage, setResizedImage] = useState(null);
+const Sharp = () => {
+ async function resizeImage() {
+     await sharp('/assets/Effect_cart.jpg')
+    .resize({ width: 100 })
+    .toFile('image2.jpg')
+ }
 
-  useEffect(() => {
-    // Resmi yeniden boyutlandırma işlemi
-    const resizeImage = async () => {
-      try {
-        const resizedBuffer = await sharp(imagePath)
-          .resize(newWidth, newHeight)
-          .toBuffer();
-
-        // Yeniden boyutlandırılmış resmi state'e kaydet
-        setResizedImage(resizedBuffer);
-      } catch (error) {
-        console.error('Resim yeniden boyutlandırma hatası:', error);
-      }
-    };
-
-    resizeImage();
-  }, [imagePath, newWidth, newHeight]);
-
-  return (
+  return ( 
     <div>
-      <h2>Yeniden Boyutlandırılmış Resim</h2>
-      {resizedImage && (
-        <img
-          src={`/assets/Card.jpeg;base64,${resizedImage.toString('base64')}`}
-          alt="Yeniden Boyutlandırılmış Resim"
-        />
-      )}
+      <h1>Sharp</h1>
     </div>
-  );
-};
-
-export default ImageResizer;
+   );
+}
+ 
+export default Sharp;
