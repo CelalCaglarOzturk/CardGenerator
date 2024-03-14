@@ -5,6 +5,8 @@ import Navbar from './Navbar'
 import Rules from './Rules';
 import Contact from './Contact';
 import Browse from './Browse';
+import Register from './Register';
+import Play from './Play';
 function App() {
  
 
@@ -14,6 +16,9 @@ function App() {
     <div className="App">
     <Routes>
        <Route path="/" element={<HomePage />} />
+    </Routes>
+    <Routes>
+      <Route path='/play' element={<Play />}/>
     </Routes>
     <Routes>
         <Route path="/create" element={<Create />} />
@@ -27,6 +32,10 @@ function App() {
     <Routes>
       <Route path='/browse' element={<Browse />}/>
     </Routes>
+    <Routes>
+      <Route path='/register' element={<Register />}/>
+    </Routes>
+ 
     </div>
     </Router>
   )
