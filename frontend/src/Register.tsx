@@ -68,7 +68,7 @@ export default function Register() {
   }
 
   return (
-    <>
+    <div className="text-center">
       {register && (
         <form id="register-form" onSubmit={registerHandle}>
           <ul>
@@ -183,6 +183,6 @@ export default function Register() {
           </ul>
         </form>
       )}
-    </>
+    </div>
   );
 }
